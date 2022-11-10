@@ -1,4 +1,4 @@
-name: Analyze
+name: Run Tests
 
 on:
   - pull_request
