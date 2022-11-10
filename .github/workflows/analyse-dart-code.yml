@@ -1,11 +1,11 @@
-name: Run Dart Analyze
+name: Analyze
 
 on:
   - pull_request
 
 jobs:
   build:
-    name: Example
+    name: Lint & Analyze
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -15,3 +15,5 @@ jobs:
       - run: flutter pub get
       - name: Analyze Dart
         uses: zgosalvez/github-actions-analyze-dart@v1
+        with:
+          analysis-options-file: fake-file
