@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "Dart-Code.flutter",
+    "Dart-Code.dart-code",
+    "localizely.flutter-intl",
+    "Nash.awesome-flutter-snippets",
+    "jeroen-meijer.pubspec-assist",
+    "christian-kohler.path-intellisense",
+    "luanpotter.dart-import",
+    "FelixAngelov.bloc"
+  ]
+}
