@@ -18,7 +18,7 @@ Map<String, String> ranks = {
 
 class Card {
   Suit suit;
-  int rank;
+  String rank;
   String imageURL;
 
   Card(this.suit, this.rank, this.imageURL);
