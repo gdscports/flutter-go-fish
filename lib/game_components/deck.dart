@@ -9,7 +9,7 @@ class Deck {
 
   Deck(List<Card> cards) : _cards = cards;
 
-  factory Deck.shuffled(CardAssetMapper cardAssetMapper) {
+  factory Deck.shuffled() {
     List<Card> cards = [];
     for (final suit in Suit.values) {
       for (int i = 0; i < 13; i++) {
