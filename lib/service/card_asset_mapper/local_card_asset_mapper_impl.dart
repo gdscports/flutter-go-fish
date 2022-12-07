@@ -9,7 +9,7 @@ class LocalCardAssetMapperImpl implements CardAssetMapper {
     final suit = _mapSuitToLocalAssetPath(card.suit);
     final fileName = 'card_${suit}_${card.rank}.png';
 
-    return '$_localCardAssetPath/$suit/$fileName';
+    return '$_localCardAssetPath/${card.rank}/$fileName';
   }
 
   String _mapSuitToLocalAssetPath(Suit suit) {
