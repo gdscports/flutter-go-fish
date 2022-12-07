@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './gameComponents/deck.dart';
+import './game_components/deck.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,9 +38,10 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  var generatedDeck = Deck.shuffled();
+
   @override
   Widget build(BuildContext context) {
-    Deck();
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -50,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              Deck.tmp,
+              generatedDeck.deck.toString(),
             ),
             Text(
               '$_counter',
