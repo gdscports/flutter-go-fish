@@ -7,25 +7,9 @@ class LocalCardAssetMapperImpl implements CardAssetMapper {
   @override
   String mapToAsset(Card card) {
     final suit = _mapSuitToLocalAssetPath(card.suit);
-    final rank = _mapRankIntToString(card.rank);
-    final fileName = 'card_${suit}_$rank.png';
+    final fileName = 'card_${suit}_${card.rank}.png';
 
-    return '$_localCardAssetPath/$rank/$fileName';
-  }
-
-  String _mapRankIntToString(int rank) {
-    switch (rank) {
-      case 1:
-        return 'A';
-      case 11:
-        return 'J';
-      case 12:
-        return 'Q';
-      case 13:
-        return 'K';
-      default:
-        return rank.toString();
-    }
+    return '$_localCardAssetPath/${card.rank}/$fileName';
   }
 
   String _mapSuitToLocalAssetPath(Suit suit) {
