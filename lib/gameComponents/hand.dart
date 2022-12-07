@@ -7,7 +7,5 @@ class Hand {
     _cards.shuffle();
   }
 
-  List<Card> getCards() {
-    return _cards;
-  }
+  List<Card> get cards => _cards;
 }
