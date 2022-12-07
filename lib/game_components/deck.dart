@@ -1,3 +1,5 @@
+import 'package:gdscports_go_fish_flutter/service/card_asset_mapper/card_asset_mapper_interface.dart';
+
 import 'card.dart';
 import 'hand.dart';
 
@@ -7,15 +9,14 @@ class Deck {
 
   Deck(List<Card> cards) : _cards = cards;
 
-  factory Deck.shuffled() {
+  factory Deck.shuffled(CardAssetMapper cardAssetMapper) {
     List<Card> cards = [];
     for (final suit in Suit.values) {
-      for (final rank in ranks.entries) {
+      for (int i = 0; i < 13; i++) {
         cards.add(
           Card(
             suit,
-            rank.key,
-            'cards/${suit.name}s/card_${suit.name}s_${rank.key}.png',
+            i.toString(),
           ),
         );
       }
