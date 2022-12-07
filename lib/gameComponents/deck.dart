@@ -2,12 +2,15 @@ import 'card.dart';
 import 'hand.dart';
 
 class Deck {
-  List<Hand> hands = [];
-  List<Card> cards = [];
+  List<Hand> _hands = [];
+  List<Card> _cards;
 
-  Deck() {
-    for (var suit in Suit.values) {
-      for (var rank in ranks.entries) {
+  Deck(List<Card> cards) : _cards = cards;
+
+  factory Deck.shuffled() {
+    List<Card> cards = [];
+    for (final suit in Suit.values) {
+      for (final rank in ranks.entries) {
         cards.add(
           Card(
             suit,
@@ -18,13 +21,20 @@ class Deck {
       }
     }
     cards.shuffle();
+    return Deck(cards);
   }
 
   void shuffle() {
-    cards.shuffle();
+    _cards.shuffle();
   }
 
   void shuffleHand(int hand) {
-    hands[hand].shuffle();
+    _hands[hand].shuffle();
+  }
+
+  List<Card> get deck => _cards;
+
+  List<Card> getHand(int hand) {
+    return _hands[hand].cards;
   }
 }
